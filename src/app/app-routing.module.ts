@@ -5,6 +5,7 @@ import { EventsComponent } from './events/events.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SpecialEventsComponent } from './special-events/special-events.component';
+import { ForgotPasswordComponent} from './forgot-password/forgot-password.component';
 
 const routes: Routes = [{
   path:'',
@@ -27,7 +28,12 @@ const routes: Routes = [{
 {
   path:'registration',
   component:RegistrationComponent
-}];
+},
+{
+   path: 'forgotPassword',
+   component: ForgotPasswordComponent
+}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -12,6 +12,8 @@ import { EventsComponent } from './events/events.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AuthserviceService } from './authservice.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { TokenInterceptorService } from './token-interceptor.service';
     LoginComponent,
     RegistrationComponent,
     SpecialEventsComponent,
-    EventsComponent
+    EventsComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [AuthGuard,{
+  providers: [AuthGuard, AuthserviceService,{
     provide:HTTP_INTERCEPTORS,
     useClass:TokenInterceptorService,
     multi:true

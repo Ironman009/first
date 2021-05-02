@@ -16,6 +16,7 @@
                     <span class="error" *ngIf="password.invalid && password.touched" class="text-danger">Please enter the password</span>
                 </div>
                 <br>
+                <a class="nav-link" [routerLink]="['/forgotPassword']">forgot Password?</a>
                 
                 <button type="submit" class="btn btn-info btn-block" style=" margin-left:50px">login</button> 
             </form>

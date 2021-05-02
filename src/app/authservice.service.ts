@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
+import { CATCH_ERROR_VAR } from '@angular/compiler/src/output/output_ast';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
@@ -32,4 +34,20 @@ export class AuthserviceService {
     localStorage.removeItem('token')
     this.route.navigate(['/events'])
   }
+
+
+  forgotPassword(data){
+   return this.http.post<any>(`http://localhost:3000/api/v1/users/forgotPassword`, {
+         requestType: 'PASSWORD_RESET',
+         email: data.email
+    })
+    
+  }
+
+
+ 
 }
+
+
+
+
